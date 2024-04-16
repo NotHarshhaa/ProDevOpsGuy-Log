@@ -18,7 +18,7 @@ const CONFIG = {
   ],
   // blog setting (required)
   blog: {
-    title: "ProDevOpsGuy",
+    title: "ProDevOpsGuy - Free DevOps/Cloud World",
     description: "Free DevOps/Cloud World",
   },
 
