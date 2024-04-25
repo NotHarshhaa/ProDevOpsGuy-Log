@@ -12,13 +12,13 @@ const CONFIG = {
   },
   projects: [
     {
-      name: `Real-Time DevOps Projects`,
+      name: ` 📌 Real-Time DevOps Projects`,
       href: "https://github.com/NotHarshhaa/DevOps-Projects",
     },
   ],
   // blog setting (required)
   blog: {
-    title: "ProDevOpsGuy - Free DevOps/Cloud World",
+    title: "𝐏𝐫𝐨𝐃𝐞𝐯𝐎𝐩𝐬𝐆𝐮𝐲 ♾️ 𝐅𝐫𝐞𝐞 𝐃𝐞𝐯𝐎𝐩𝐬/𝐂𝐥𝐨𝐮𝐝 𝐖𝐨𝐫𝐥𝐝‌",
     description: "Free DevOps/Cloud World",
   },
 
