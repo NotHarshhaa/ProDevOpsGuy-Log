@@ -1,39 +1,51 @@
-import Feed from "src/routes/Feed"
-import { CONFIG } from "../../site.config"
-import { NextPageWithLayout } from "../types"
-import { getPosts } from "../apis"
-import MetaConfig from "src/components/MetaConfig"
-import { queryClient } from "src/libs/react-query"
-import { queryKey } from "src/constants/queryKey"
-import { GetStaticProps } from "next"
-import { dehydrate } from "@tanstack/react-query"
-import { filterPosts } from "src/libs/utils/notion"
+import { getPosts, getAllTagsFromPosts, filterPosts } from "@libs/notion"
+import Layout from "@components/Layout"
+import Feed from "@containers/Feed"
+import CONFIG from "../../site.config"
+import { NextPageWithLayout } from "./_app"
+import { TPosts, TTags } from "../types"
 
-export const getStaticProps: GetStaticProps = async () => {
-  const posts = filterPosts(await getPosts())
-  await queryClient.prefetchQuery(queryKey.posts(), () => posts)
-
-  return {
-    props: {
-      dehydratedState: dehydrate(queryClient),
-    },
-    revalidate: CONFIG.revalidateTime,
+export async function getStaticProps() {
+  try {
+    const posts = await getPosts()
+    const filteredPost = filterPosts(posts)
+    const tags = getAllTagsFromPosts(filteredPost)
+    return {
+      props: {
+        tags: {
+          All: filteredPost.length,
+          ...tags,
+        },
+        posts: filteredPost,
+      },
+      revalidate: 1,
+    }
+  } catch (error) {
+    return
   }
 }
 
-const FeedPage: NextPageWithLayout = () => {
-  const meta = {
-    title: CONFIG.blog.title,
-    description: CONFIG.blog.description,
-    type: "website",
-    url: CONFIG.link,
-  }
+type Props = {
+  tags: TTags
+  posts: TPosts
+}
 
+const FeedPage: NextPageWithLayout<Props> = ({ tags, posts }) => {
+  return <Feed tags={tags} posts={posts} />
+}
+
+FeedPage.getLayout = function getlayout(page) {
   return (
-    <>
-      <MetaConfig {...meta} />
-      <Feed />
-    </>
+    <Layout
+      metaConfig={{
+        title: CONFIG.blog.title,
+        description: CONFIG.blog.description,
+        type: "website",
+        url: CONFIG.link,
+      }}
+    >
+      {page}
+    </Layout>
   )
 }
 

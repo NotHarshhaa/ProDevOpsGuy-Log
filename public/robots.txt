@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://prodevopsguy-log.vercel.app
+Host: https://johndzblog.vercel.app
 
 # Sitemaps
-Sitemap: https://prodevopsguy-log.vercel.app/sitemap.xml
+Sitemap: https://johndzblog.vercel.app/sitemap.xml

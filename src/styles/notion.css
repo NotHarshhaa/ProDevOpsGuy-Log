@@ -1,0 +1,160 @@
+/* NOTION CSS OVERRIDE */
+
+.notion {
+  font-family: Pretendard Variable, Roboto, sans-serif !important;
+  @apply dark:text-gray-400;
+  overflow-wrap: break-word;
+}
+.notion,
+.notion-text,
+.notion-quote,
+.notion-h-title {
+  @apply leading-7;
+  @apply p-0;
+  @apply my-1;
+}
+
+.notion-h-title{
+  @apply text-black dark:text-white;
+}
+
+.notion-toggle {
+  @apply w-full;
+}
+
+.notion-list li {
+  @apply py-0;
+}
+.notion-page-link {
+  color: inherit;
+}
+
+svg.notion-page-icon {
+  @apply hidden;
+}
+
+svg + .notion-page-title-text {
+  @apply border-b-0;
+}
+
+.notion-bookmark {
+  @apply border;
+  @apply border-gray-100;
+  color: inherit;
+}
+
+.notion-bookmark .notion-bookmark-title,
+.notion-bookmark .notion-bookmark-link div {
+  @apply text-gray-900 dark:text-gray-200;
+}
+
+.notion-bookmark .notion-bookmark-description {
+  @apply text-gray-600 dark:text-gray-300;
+}
+
+.notion-code > code {
+  @apply text-gray-900;
+}
+
+pre[class*="language-"] {
+  line-height: inherit;
+}
+
+.notion-bookmark:hover {
+  @apply border-blue-400;
+}
+.notion-viewport {
+  z-index: -10;
+}
+.notion-asset-caption,
+.notion-asset-caption > a 
+{
+  /* @apply text-center; */
+  @apply text-gray-500 dark:text-gray-400 border-gray-400;
+}
+.notion-full-width {
+  @apply px-0;
+}
+.notion-page {
+  @apply w-auto;
+  @apply px-0;
+}
+
+.notion, .notion-h-title, .notion-quote, .notion-text {
+  line-height: 1.5rem;
+}
+
+.notion-quote {
+  padding: 0.2em 0.9em;
+  font-size: 1.0em;
+  font-style:italic;
+  background: #a3b6c31c;
+  /* box-shadow: 4px 4px 8px #ccc;
+  background: #f7f7f7; */
+}
+
+.notion-link {
+  @apply text-sky-500 border-sky-500;
+  /* color: #0EA5E9; */
+  /* border-color:#0EA5E9; */
+  opacity: 1;
+}
+
+.notion-link:hover {
+  @apply text-sky-400 border-sky-400;
+}
+
+.notion-inline-code {
+  font-family: Pretendard Variable, Roboto, sans-serif !important;
+  color: #ff6d6d !important;
+  
+}
+
+.notion-collection {
+  @apply max-w-full;
+}
+.notion-collection > .notion-collection-header {
+  @apply px-0 !important;
+}
+.notion-collection > .notion-table {
+  @apply max-w-full !important;
+}
+.notion-collection > .notion-table > .notion-table-view {
+  @apply px-0 !important;
+}
+.notion-collection-view-type {
+  @apply hidden;
+}
+.notion-collection-row {
+  @apply hidden;
+}
+
+.notion-hr {
+  border-top: 1px solid rgb(64 64 64);
+}
+
+.notion b {
+  @apply font-extrabold dark:text-gray-300;
+}
+
+.notion-simple-table td {
+  border: 1px solid rgb(68 68 68);
+}
+
+.notion-table-of-contents-item {
+  @apply text-gray-400;
+}
+.notion-table-of-contents-item-body {
+  @apply border-b-gray-400;
+}
+
+
+/* 이미지 좌측으로 */
+.notion-asset-wrapper-image > div {
+  align-self: flex-start !important;
+}
+/* 이미지 radius */
+.notion-asset-wrapper img {
+  @apply border border-gray-200 dark:border-gray-800;
+  border-radius: 9px;
+}
