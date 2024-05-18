@@ -27,8 +27,8 @@ const Footer: React.FC<Props> = ({ data }) => {
 
       {data.slug != 'about' && (
         <p className="text-center text-gray-500 dark:text-gray-400 mt-8 mb-2 py-12 bg-gray-100 dark:bg-gray-800">
-          긴 글 읽어주셔서 감사합니다. <br/>
-          오탈자 및 내용 피드백은 언제나 환영합니다.
+          Thank you for reading this long article. <br/>
+          Feedback on typos and content is always welcome.
         </p>
       )}
       {data.tags && (
